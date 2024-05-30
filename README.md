@@ -1,10 +1,10 @@
-# Very short description of the package
+# Laravel API Response
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/asifcode/api-response.svg?style=flat-square)](https://packagist.org/packages/asifcode/api-response)
 [![Total Downloads](https://img.shields.io/packagist/dt/asifcode/api-response.svg?style=flat-square)](https://packagist.org/packages/asifcode/api-response)
 ![GitHub Actions](https://github.com/asifcode/api-response/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This is package for api response from laravel controller. you can return pagination and json data with this packages.
 
 ## Installation
 
@@ -17,7 +17,23 @@ composer require asifcode/api-response
 ## Usage
 
 ```php
-// Usage description here
+
+use Asifcode\ApiResponse\ApiResponse;
+
+//general api response
+return ApiResponse::response(200)->message('Hello World')->data()->send();
+
+//laravel collection pagination response
+return ApiResponse::response(200)->message('Hello World')->data()->pagination();
+
+//request errors response 
+
+protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(
+            ApiResponse::response(422)->errors($validator->messages())->success(false)->send()
+        );
+    }
 ```
 
 ### Testing
@@ -47,6 +63,4 @@ If you discover any security related issues, please email asif.ice.pust@gmail.co
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
 
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
