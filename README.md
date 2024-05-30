@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/asifcode/api-response.svg?style=flat-square)](https://packagist.org/packages/asifcode/api-response)
 [![Total Downloads](https://img.shields.io/packagist/dt/asifcode/api-response.svg?style=flat-square)](https://packagist.org/packages/asifcode/api-response)
-![GitHub Actions](https://github.com/asifcode/api-response/actions/workflows/main.yml/badge.svg)
+
 
 This is package for api response from laravel controller. you can return pagination and json data with this packages.
 
