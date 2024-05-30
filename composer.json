@@ -1,0 +1,54 @@
+{
+    "name": "asifcode/api-response",
+    "description": "Sending api response",
+    "keywords": [
+        "asifcode",
+        "api-response"
+    ],
+    "homepage": "https://github.com/asifcode/api-response",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Md. Asif Iqbal",
+            "email": "asif.ice.pust@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Asifcode\\ApiResponse\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Asifcode\\ApiResponse\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Asifcode\\ApiResponse\\ApiResponseServiceProvider"
+            ],
+            "aliases": {
+                "ApiResponse": "Asifcode\\ApiResponse\\ApiResponseFacade"
+            }
+        }
+    }
+}
